@@ -1,8 +1,36 @@
 <!doctype html>
 <head> 
     <title>Dimply Golf Balls</title>
-    <link rel="stylesheet" href ="Styles.css">
 </head>
+<style>
+    html {
+        background-color: #f8f8f8;
+        height: 100vh;}
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    section {
+        min-height: 300px;
+        width: 80%;
+        margin: 30px auto;
+    }
+    .Products {
+        width: 90%;
+        margin: 0px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 3%;
+        list-style: none;
+        padding: 20px 0px;
+    }
+    .Products li img {
+        width: 100%;
+        border: 7px solid #ffaf2c;
+        min-height: 600px;
+    }
+
+</style>
     <body> 
         <nav> 
             <a href="Home.html">Home</a>
@@ -11,4 +39,40 @@
             <a href="Individual.html">Shop Individual</a>
             <a href="Orders.html">Place an order</a>
         </nav>
+
+        <section>
+            <ul class="Products">
+            
+            <li>
+                <a href="Products/Dozens/Competition/Z-Star.html" target="_blank"> <img src="Images/Dozens Photos/Competition Grade/Z-Star.JPG" alt="Z-Star"></a>
+                <h1>Competition Grade Z-Star</h1>
+                <p>$20</p>
+            </li>
+            <li>
+                <img src="Images/UnderMaintenance.png">
+                <h1>Product Name</h1>
+                <p>$20</p>
+            </li>
+            <li>
+                <img src="Images/UnderMaintenance.png">
+                <h1>Product Name</h1>
+                <p>$20</p>
+            </li>
+            <li>
+                <img src="Images/UnderMaintenance.png">
+                <h1>Product name</h1>
+                <p>$20</p>
+            </li>
+            <li>
+                <img src="Images/UnderMaintenance.png">
+                <h1>Product Name</h1>
+                <p>$20</p>
+            </li>
+            <li>
+                <img src="Images/UnderMaintenance.png">
+                <h1>Product Name</h1>
+                <p>$20</p>
+            </li>
+        </ul>
+        </section>  
     </body>
