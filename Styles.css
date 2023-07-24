@@ -148,7 +148,7 @@ nav a {
 section {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 2fr 1fr;
     padding-top:6%;
 }
 
@@ -194,4 +194,50 @@ section {
     border: 7px solid #8de4f7;
     cursor: pointer;
 }
+
+/*Footer Navigation*/
+
+/*Footer background*/
+.site-footer {
+    background-color: #ffaf2c;
+    color: #fff;
+    padding: 40px 0;
+}
+/*Puts everything inside background with spacing*/
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer-column {
+    flex: 0 0 30%;
+    margin-right: 20px;
+}
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.footer-column p,
+.footer-column ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+.footer-column ul {
+    list-style: none;
+    padding-left: 0;
+}
+.footer-column ul li {
+    margin-bottom: 7px;
+}
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #fff;    
+}
+
 
