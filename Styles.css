@@ -213,10 +213,12 @@ section {
 .footer-column {
     flex: 0 0 30%;
     margin-right: 20px;
+    text-align: center; 
 }
 .footer-column h3 {
     font-size: 18px;
     margin-bottom: 10px;
+    text-align: center; 
 }
 .footer-column p,
 .footer-column ul {
@@ -230,10 +232,33 @@ section {
 .footer-column ul li {
     margin-bottom: 7px;
 }
-.footer-column ul li a {
-    color: #fff;
-    text-decoration: none;
+.footer-column ul li {
+    position: relative;
 }
+.footer-column ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.footer-column ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: -4px; 
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s, transform-origin 0s;
+    transform-origin: center;
+}
+
+.footer-column ul li:hover a::before {
+    width: 100%;
+}
+
+
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
