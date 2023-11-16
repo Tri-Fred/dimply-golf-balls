@@ -1,18 +1,21 @@
 <!doctype html>
-<head> 
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dimply Golf Balls</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
-    html {
-        background-color: #f8f8f8;
-        min-height: 100vh;}
-    * {
-        margin: 0;
-        padding: 0;
-    }
     /*NavBar styling*/
     header {
-        position: absolute; 
+        font-family: 'Poppins', sans-serif;
+        position: absolute;
         top: 0;
         left: 0;
         width: 89%;
@@ -23,6 +26,7 @@
         align-items: center;
         z-index: 100;
     }
+
     /*Top left logo styling*/
     .Logo {
         font-size: 32px;
@@ -30,6 +34,7 @@
         text-decoration: none;
         font-weight: 700;
     }
+
     /*NavBar text styling*/
     .navbar a {
         position: relative;
@@ -39,6 +44,7 @@
         text-decoration: none;
         margin-left: 40px;
     }
+
     /*NavBar text hover state*/
     .navbar a::before {
         content: '';
@@ -50,17 +56,20 @@
         background: #fff;
         transition: 0.3s;
     }
+
     .navbar a:hover::before {
         width: 100%;
     }
+
     /*Dropdown menu*/
     .dropdown {
         position: relative;
         display: inline-block;
     }
+
     /*"Product" button that triggers dropdown*/
     .d-button {
-        background-color:transparent;
+        background-color: transparent;
         color: #fff;
         font-size: 24px;
         font-weight: 500;
@@ -68,15 +77,17 @@
         cursor: pointer;
         margin-left: 40px;
     }
+
     /*Dropdown internal styling*/
     .dropdown-content {
         display: none;
         position: absolute;
         background-color: #ffaf2c;
         min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
+
     /*Dropdown box text*/
     .dropdown-content a {
         color: #fff;
@@ -94,87 +105,226 @@
     .dropdown:hover .dropdown-content {
         display: block;
     }
-  
-    section {
-        min-height: 300px;
-        width: 80%;
-        margin: 30px auto;
-        padding-top: 8%;
+
+
+
+    /*Styles for product tiles*/
+
+    /*Styles for all elements within "container" tags*/
+    .container {
+        font-family: 'Poppins', sans-serif;
+        max-width: 1300px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
     }
-    .Products {
-        width: 90%;
-        margin: 0px auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 3%;
+
+    /*Styles for all elements within "row" tags*/
+    .row {
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    /*All items inside Small-container elements*/
+    .small-container {
+        max-width: 1080px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    /*Latest Products*/
+    .col-4 {
+        flex: 0 0 25%;
+        flex-basis: 25%;
+        padding: 10px;
+        max-width: 25%;
+        min-width: 200px;
+        margin-bottom: 50px;
+        box-sizing: border-box;
+        transition: transform 0.5s;
+    }
+
+    .col-4 img {
+        width: 100%;
+    }
+
+    /* Products*/
+    h4 {
+        font-size: 20px;
+        color: #555;
+        font-weight: normal;
+        margin-bottom: 3px;
+        margin-top: 3px;
+    }
+
+    /*Price text*/
+    .col-4 p,
+    .col-4 h6 {
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+    }
+
+    /*Alternate color for "Out of Stock"*/
+    .col-4 h6 {
+        color: #ff5a2c;
+    }
+
+    /*Rating star color*/
+    .rating .fa {
+        color: #ffaf2c;
+    }
+
+    .col-4:hover {
+        transform: translateY(-5px)
+    }
+
+    /*styles for "Grade" text*/
+    .col-4 h5 {
+        padding: 0;
+        margin: 0;
+        font-weight: 750;
+        font-size: 14px;
+    }
+
+    /*Stops each product's link from changing the styles of the text*/
+    .col-4 a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    /*Filter styles*/
+    .row-2 {
+        justify-content: space-between;
+        margin: 200px auto 10px;
+    }
+
+    /*Hover states for filter*/
+    select {
+        border: 1px solid #ffaf2c;
+        padding: 5px;
+    }
+
+    select:focus {
+        outline: none;
+    }
+
+    /*"Page select" button styling*/
+    .page-btn {
+        margin: 0 auto 80px;
+    }
+
+    .page-btn span {
+        display: inline-block;
+        border: 1px solid #ffaf2c;
+        margin-left: 10px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+    }
+
+    .page-btn span:hover {
+        background: #ffaf2c;
+        color: #fff;
+    }
+
+    /*Footer Navigation*/
+
+    /*Footer background*/
+    .site-footer {
+        font-family: 'Poppins', sans-serif;
+        background-color: #ffaf2c;
+        color: #fff;
+        padding: 40px 0;
+    }
+
+    /*Puts everything inside background with spacing*/
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-column {
+        flex: 0 0 30%;
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    .footer-column h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .footer-column p,
+    .footer-column ul {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .footer-column ul {
         list-style: none;
-        padding: 20px 0px;
-    }
-    .Products li img {
-        width: 90%;
-        border: 7px solid #7ed590;
-        min-height: 90%;
-    }
-    .Products li img:hover {
-        border: 7px solid #8de4f7;
+        padding-left: 0;
     }
 
-/*Footer Navigation*/
+    .footer-column ul li {
+        margin-bottom: 7px;
+    }
 
-/*Footer background*/
-.site-footer {
-    background-color: #ffaf2c;
-    color: #fff;
-    padding: 40px 0;
-}
-/*Puts everything inside background with spacing*/
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.footer-column {
-    flex: 0 0 30%;
-    margin-right: 20px;
-}
-.footer-column h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-.footer-column p,
-.footer-column ul {
-    font-size: 14px;
-    line-height: 1.6;
-}
-.footer-column ul {
-    list-style: none;
-    padding-left: 0;
-}
-.footer-column ul li {
-    margin-bottom: 7px;
-}
-.footer-column ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #fff;    
-}
+    .footer-column ul li {
+        position: relative;
+    }
 
+    .footer-column ul li a {
+        text-decoration: none;
+        color: #fff;
+        text-align: center;
+        position: relative;
+    }
+
+    .footer-column ul li a::before {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #fff;
+        transition: width 0.3s, transform-origin 0s;
+        transform-origin: center;
+    }
+
+    .footer-column ul li:hover a::before {
+        width: 100%;
+    }
+
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #fff;
+    }
 </style>
-    <body> 
-        <!--Nav Bar-->
-        <header class="header">
-            <a href="Home.html" class="Logo">Dimply Golf Balls</a>
-            <nav class="navbar">
+
+
+<body>
+    <!--Nav Bar-->
+    <header class="header">
+        <a href="Home.html" class="Logo">Dimply Golf Balls</a>
+        <nav class="navbar">
             <a href="Home.html"> Home</a>
-            <a href="Account.html"> Account</a>
-            <a href="Bag.html"> Bag</a>
-            <a href="About.html"> About</a>
-            <a href="Contact.html"> Contact</a>
+            <a href=""> Account</a>
+            <a href=""> Bag</a>
+            <a href=""> About</a>
+            <a href=""> Contact</a>
             <div class="dropdown">
                 <button class="d-button">Products</button>
                 <div class="dropdown-content">
@@ -183,189 +333,266 @@
                     <a href="Individual.html">Individual</a>
                     <a href="Dozens.html">Dozens</a>
                     <a href="New.html">New Balls </a>
-                    </div>
                 </div>
-            </nav>
-        </header>  
-        <!--Product layout-->
-        <section>
-            <ul class="Products">
-            
-            <li>
-                <a href="Products/Individual/Competition/CompTP5.html" target="_blank"> <img src="Images/Individual Photos/TP5.JPG" alt="TP5"></a>
-                <h1>Competition Grade TP5</h1>
-                <p>$4</p>
-            </li>
-            <li>
-                <a href="Products/Individual/Competition/CompTruvis.html" target="_blank"> <img src="Images/Individual Photos/Truvis.JPG" alt="Truvis"></a>
-                <h1>Competition Grade Truvis</h1>
-                <p>$4</p>
-            </li>
-            <li>
-                <img src="Images/UnderMaintenance.png" alt="Under Maintenance"></a>
-                <h1>Product Name</h1>
-                <p>$20</p>
-            </li>
-            <li>
-                <img src="Images/UnderMaintenance.png" alt="Under Maintenance"></a>
-                <h1>Product Name</h1>
-                <p>$20</p>
-            </li>
-            <li>
-                <img src="Images/UnderMaintenance.png" alt="Under Maintenance"></a>
-                <h1>Product Name</h1>
-                <p>$20</p>
-            </li>
-            <li>
-                <img src="Images/UnderMaintenance.png" alt="Under Maintenance"></a>
-                <h1>Product Name</h1>
-                <p>$20</p>
-            </li>
-        </ul>
-        </section>  
-
-          <!--Footer Navigation Bar-->
-          <footer class="site-footer">
-            <div class="footer-container">
-                <div class="footer-column">
-                    <h3>Need help?</h3>
-                    <ul class="Help">
-                        <li><a href="underMaintenance.html" class="FAQs"></a>FAQs</li>
-                        <li><a href="#" class="Delivery"></a>Delivery</li>
-                        <li><a href="#"class="PaymentOptions"></a>Payment Options</li>
-                        <li><a href="#"class="Returns"></a>Returns</li>
-                    </ul>  
-                </div>
-                <div class="footer-column">
-                    <h3>Shopping online</h3>
-                    <ul class="ShoppingOnline">
-                        <li><a href="#" class="placeOrder"></a>Place an Order</li>
-                        <li><a href="#" class="TrackOrder"></a>Track Your Order</li>
-                        <li><a href="#" class="BuyingGuides"></a>Guides to Buying</li>
-                        <li><a href="#" class="GradingDesc"></a> Grading description</li>
-                    </ul>
-                </div>  
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <ul class="ContactUs">
-                        <li><a href="#" class="Contact"></a>Contact Us</li>
-                        <li><a href="#" class="Feedback"></a>Leave Feedback</li>
-                        <li><a href="#" class="Reviews"></a>Reviews</li>
-                        <li><a href="#" class="Social Pages"></a> Social Pages</li>
-                    </ul>
-                </div> 
-                <div class="footer-column">
-                    <h3>About Us</h3>
-                    <ul class="AboutUs">
-                        <li><a href="#" class="About"></a>About Us</li>
-                        <li><a href="#" class="Info"></a>Company Information</li>
-                        <li><a href="#" class="Work"></a>Work For Us</li>
-                        <li><a href="#" class="PrivacyPolicy"></a> Privacy Policy</li>
-                    </ul>
-                </div> 
             </div>
-            <div class="footer-bottom">
-                <p>&copy: 2023 Dimply Golf Balls. All rights reserved.</p>
-        </footer>
+        </nav>
+    </header>
 
-    </body>
+    <!--Product Rows-->
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Shop Individual Balls</h2>
+            <select>
+                <option>Default Sorting</option>
+                <option>Sort by Price</option>
+                <option>Sort by Popularity</option>
+                <option>Sort by Rating</option>
+                <option>Sort by Sale</option>
+            </select>
+        </div>
+        <!--Row 1-->
+        <div class="row">
+            <div class="col-4">
+                <a href="ProductExample.html">
+                    <img src="Images/UnderMaintenance.png">
+                    <h4>Callaway Mixed</h4>
+                    <h5>Casual Grade</h5>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>$1.00</p>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="ProductExample.html">
+                    <img src="Images/UnderMaintenance.png">
+                    <h4>Srixon Mixed</h4>
+                    <h5>Competition Grade</h5>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>$2.50</p>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="ProductExample.html">
+                    <img src="Images/UnderMaintenance.png">
+                    <h4>Bridgestone Tour B</h4>
+                    <h5>Competition Grade</h5>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>$3.00</p>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="ProductExample.html">
+                    <img src="Images/UnderMaintenance.png">
+                    <h4>Titleist AVX</h4>
+                    <h5>Competition Grade</h5>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <h6>Out of Stock</h6>
+                </a>
+            </div>
 
+        </div>
+        <!--Row 2-->
+        <div class="row">
+            <div class="col-4">
+                <a href="ProductExample.html">
+                    <img src="Images/UnderMaintenance.png">
+                    <h4>Cheap Mixed</h4>
+                    <h5>Competition Grade</h5>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>$2.00</p>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="ProductExample.html">
+                    <img src="Images/UnderMaintenance.png">
+                    <h4>Srixon Mixed</h4>
+                    <h5>Casual Grade</h5>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>$1.00</p>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="ProductExample.html">
+                    <img src="Images/UnderMaintenance.png">
+                    <h4>Taylormade TP5X</h4>
+                    <h5>Competition Grade</h5>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <h6>Out of Stock</h6>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="ProductExample.html">
+                    <img src="Images/UnderMaintenance.png">
+                    <h4>Titleist ProV1</h4>
+                    <h5>Casual Grade</h5>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>$3.00</p>
+                </a>
+            </div>
+        </div>
+        <!--Row 3-->
+        <div class="row">
+            <div class="col-4">
+                <a href="ProductExample.html">
+                    <img src="Images/UnderMaintenance.png">
+                    <h4>Callaway ChromeSoft</h4>
+                    <h5>Competition Grade</h5>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>$4.00</p>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="ProductExample.html">
+                    <img src="Images/UnderMaintenance.png">
+                    <h4>Premium Cheap</h4>
+                    <h5>Competition Grade</h5>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <h6>Out of Stock</h6>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="ProductExample.html">
+                    <img src="Images/UnderMaintenance.png">
+                    <h4>Taylormade Mixed</h4>
+                    <h5>Casual Grade</h5>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <h6>Out of Stock</h6>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="ProductExample.html">
+                    <img src="Images/UnderMaintenance.png">
+                    <h4>Callaway Truvis</h4>
+                    <h5>Competition Grade</h5>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <h6>Out of Stock</h6>
+                </a>
+            </div>
+        </div>
+        <!--Change page button-->
+        <div class="page-btn">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>&#8594;</span>
 
+        </div>
+    </div>
+    <!--Footer Navigation Bar-->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Need help?</h3>
+                <ul class="Help">
+                    <li><a href="#" class="FAQs">FAQs</a></li>
+                    <li><a href="#" class="Delivery">Delivery</a></li>
+                    <li><a href="#" class="PaymentOptions">Payment Options</a></li>
+                    <li><a href="#" class="Returns">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Shopping online</h3>
+                <ul class="ShoppingOnline">
+                    <li><a href="#" class="placeOrder">Place an Order</a></li>
+                    <li><a href="#" class="TrackOrder">Track Your Order</a></li>
+                    <li><a href="#" class="BuyingGuides">Guides to Buying</a></li>
+                    <li><a href="#" class="GradingDesc">Grading description</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul class="ContactUs">
+                    <li><a href="Contact.html" class="ContactUs">Contact Us</a></li>
+                    <li><a href="#" class="Feedback">Leave Feedback</a></li>
+                    <li><a href="#" class="Reviews">Reviews</a></li>
+                    <li><a href="#" class="Social Pages">Social Pages</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul class="AboutUs">
+                    <li><a href="#" class="About">About Us</a></li>
+                    <li><a href="#" class="Info">Company Information</a></li>
+                    <li><a href="#" class="Work">Work For Us</a></li>
+                    <li><a href="#" class="PrivacyPolicy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Dimply Golf Balls. All rights reserved.</p>
+        </div>
+    </footer>
 
-
-
-
-<!-- <!doctype html>
-<head> 
-    <title>Dimply Golf Balls</title>
-</head>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;}
-body {
-    background: #000;
-    min-height: 200vh;}
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: 0.6s;
-    padding: 40px 100px;
-    z-index: 100000;}
-    
-header .sticky {
-    padding: 5px 100px;
-    background: #fff;
-}
-
-header .Logo {
-    position: relative;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    font-size: 2em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: 0.6s;}
-
-header ul {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;}
-
-header ul li { 
-    position: relative;
-    list-style: none;}
-
-header ul li a {
-    position: relative;
-    margin: 0 15px;
-    text-decoration: none;
-    color: #fff;
-    letter-spacing: 2px;
-    font-weight: 500px;
-    transition: 0.6s;}
-
-.banner {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url(Images/bg.jpg);
-    background-size: cover;
-}
-header .sticky .Logo,
-header .sticky {
-    color: #000;
-}
-
-
-</style>
-    <body> 
-        <header>
-            <a href=" #" class="Logo">Logo</a>
-            <ul>
-                <li><a href="#"> Home</a></li>
-                <li><a href="#"> About</a></li>
-                <li><a href="#"> Services</a></li>
-                <li><a href="#"> Portfolio</a></li>
-                <li><a href="#"> Team</a></li>
-                <li><a href="#"> Contact</a></li>
-            </ul>
-        </header>  
-        <section class="banner"></section>
-        <script type="text/javascript"> 
-        window.addEventListener("scroll" , function(){
-            var header = document.querySelector("header");
-            header.classList.toggle("sticky" , window.scrollY > 0);
-        })
-        </script>
-    </body> 
+</body>

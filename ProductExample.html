@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Dimply Golf Balls</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+    /*NavBar styling*/
+    header {
+        font-family: 'Poppins', sans-serif;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 89%;
+        padding: 20px 100px;
+        background: #ffaf2c;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+    }
+
+    /*Top left logo styling*/
+    .Logo {
+        font-size: 32px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    /*NavBar text styling*/
+    .navbar a {
+        position: relative;
+        font-size: 24px;
+        color: #fff;
+        font-weight: 500;
+        text-decoration: none;
+        margin-left: 40px;
+    }
+
+    /*NavBar text hover state*/
+    .navbar a::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #fff;
+        transition: 0.3s;
+    }
+
+    .navbar a:hover::before {
+        width: 100%;
+    }
+
+    /*Dropdown menu*/
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /*"Product" button that triggers dropdown*/
+    .d-button {
+        background-color: transparent;
+        color: #fff;
+        font-size: 24px;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        margin-left: 40px;
+    }
+
+    /*Dropdown internal styling*/
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #ffaf2c;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /*Dropdown box text*/
+    .dropdown-content a {
+        color: #fff;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        margin-left: 5px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ffaf2c;
+
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+
+    /*-----Single Product Details------*/
+    .single-product {
+        margin-top: 80px;
+    }
+
+    .single-product .col-2 img {
+        padding: 0;
+    }
+
+    .single-product .col-2 {
+        padding: 20px;
+    }
+
+    .single-product h4 {
+        margin: 20px 0;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .single-product select {
+        display: block;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .single-product input {
+        width: 50px;
+        height: 40px;
+        padding-left: 10px;
+        font-size: 20px;
+        margin-right: 10px;
+        border: 1px solid #ffaf2c;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    .single-product .fa {
+        color: #ffaf2c;
+        margin-left: 10px;
+    }
+
+    .small-img-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .small-img-col {
+        flex-basis: 24%;
+        cursor: pointer;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #555;
+    }
+
+    p {
+        color: #555;
+    }
+
+    .small-container {
+        max-width: 1080px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-top: 100px;
+    }
+
+
+    /*Scrolling Product Images*/
+    .col-2 {
+        flex-basis: 50%;
+        min-width: 300px;
+    }
+
+    .col-2 img {
+        max-width: 100%;
+        padding: 50px 0;
+    }
+
+    .col-2 h1 {
+        font-size: 50px;
+        line-height: 60px;
+        margin: 10px 0;
+    }
+
+    /*Product Details*/
+    .col-2 h3 {
+        margin: 10px 0 0 0;
+    }
+
+    .col-2 p {
+        margin-top: 0px;
+        padding: 0px;
+    }
+
+    /*Related Products */
+    .col-4 {
+        flex-basis: 25%;
+        padding: 10px;
+        min-width: 200px;
+        margin-bottom: 50px;
+        transition: trasform 0.5s;
+    }
+
+    .col-4 img {
+        width: 100%;
+    }
+
+    /*styles for "Grade" text*/
+    .col-4 h5 {
+        padding: 0;
+        margin: 0;
+        font-weight: 750;
+        font-size: 14px;
+    }
+
+    /*styles for "Grade" text*/
+    .col-2 h5 {
+        padding: 0;
+        margin: 0;
+        font-weight: 750;
+        font-size: 18px;
+    }
+
+    .rating .fa {
+        color: #ffaf2c;
+    }
+
+    .row-3 {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-top: 50px;
+    }
+
+    /*Footer Navigation*/
+
+    /*Footer background*/
+    .site-footer {
+        font-family: 'Poppins', sans-serif;
+        background-color: #ffaf2c;
+        color: #fff;
+        padding: 40px 0;
+    }
+
+    /*Puts everything inside background with spacing*/
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-column {
+        flex: 0 0 30%;
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    .footer-column h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .footer-column p,
+    .footer-column ul {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .footer-column ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 7px;
+    }
+
+    .footer-column ul li {
+        position: relative;
+    }
+
+    .footer-column ul li a {
+        text-decoration: none;
+        color: #fff;
+        text-align: center;
+        position: relative;
+    }
+
+    .footer-column ul li a::before {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #fff;
+        transition: width 0.3s, transform-origin 0s;
+        transform-origin: center;
+    }
+
+    .footer-column ul li:hover a::before {
+        width: 100%;
+    }
+
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #fff;
+    }
+</style>
+
+<body>
+    <!--Nav Bar-->
+    <header class="header">
+        <a href="Home.html" class="Logo">Dimply Golf Balls</a>
+        <nav class="navbar">
+            <a href="Home.html"> Home</a>
+            <a href=""> Account</a>
+            <a href=""> Bag</a>
+            <a href=""> About</a>
+            <a href=""> Contact</a>
+            <div class="dropdown">
+                <button class="d-button">Products</button>
+                <div class="dropdown-content">
+                    <a href="Products.html">All Products</a>
+                    <a href="Clearance.html">Clearance</a>
+                    <a href="Individual.html">Individual</a>
+                    <a href="Dozens.html">Dozens</a>
+                    <a href="New.html">New Balls </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-----Product Details------>
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2">
+                <!-- Scrolling Product Images-->
+                <img src="Images/UnderMaintenance.png" width="100%" id="ProductImg">
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="Images/UnderMaintenance.png" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="Images/UnderMaintenance.png" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="Images/UnderMaintenance.png" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="Images/UnderMaintenance.png" width="100%" class="small-img">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <p>Home / Titleist ProV1</p>
+                <h1>Titleist ProV1 </h1>
+                <h5>Competition Grade</h5>
+                <h4>$50.00</h4>
+                <input type="number" value="1">
+                <a href="" class="btn">Add To Cart</a>
+                <h3>Product Details<i class="fa fa-indent"></i> </h3>
+                <p>The Titleist ProV1 is a premium golf ball designed to have minimal spin with longer shots and launch
+                    at the ideal mid-flight pattern to maximize distance and accuracy.
+                    It is a 3-piece ball that has great durability. The prov1 is used by many pro golfers including
+                    Victor Hovland, Max Homa, and Tony Finau.
+                    <br>
+                    Competition grade golf balls are near new. With only minor scuffs they still have the look and feel
+                    of a brand-new ball, but for half the price.
+                    These balls are ideal for using in competition rounds and will still perform like new.
+
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <!------Title-------->
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Related Products</h2>
+            <p>View More</p>
+        </div>
+    </div>
+
+    <!---------Related Products---------->
+    <div class="small-container">
+        <div class="row-3">
+            <div class="col-4">
+                <img src="Images/UnderMaintenance.png">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="Images/UnderMaintenance.png">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="Images/UnderMaintenance.png">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="Images/UnderMaintenance.png">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+        </div>
+    </div>
+    <!--Footer Navigation Bar-->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Need help?</h3>
+                <ul class="Help">
+                    <li><a href="#" class="FAQs">FAQs</a></li>
+                    <li><a href="#" class="Delivery">Delivery</a></li>
+                    <li><a href="#" class="PaymentOptions">Payment Options</a></li>
+                    <li><a href="#" class="Returns">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Shopping online</h3>
+                <ul class="ShoppingOnline">
+                    <li><a href="#" class="placeOrder">Place an Order</a></li>
+                    <li><a href="#" class="TrackOrder">Track Your Order</a></li>
+                    <li><a href="#" class="BuyingGuides">Guides to Buying</a></li>
+                    <li><a href="#" class="GradingDesc">Grading description</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul class="ContactUs">
+                    <li><a href="Contact.html" class="ContactUs">Contact Us</a></li>
+                    <li><a href="#" class="Feedback">Leave Feedback</a></li>
+                    <li><a href="#" class="Reviews">Reviews</a></li>
+                    <li><a href="#" class="Social Pages">Social Pages</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul class="AboutUs">
+                    <li><a href="#" class="About">About Us</a></li>
+                    <li><a href="#" class="Info">Company Information</a></li>
+                    <li><a href="#" class="Work">Work For Us</a></li>
+                    <li><a href="#" class="PrivacyPolicy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Dimply Golf Balls. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!--------Javascript for toggle menu-----------
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            }
+            else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+    ---Javascript for product gallery------
+    <script>
+        var ProductImg = document.getElementById("ProductImg");
+        var SmallImg = document.getElementsByClassName("small-img");
+
+        SmallImg[0].onclick = function () {
+            ProductImg.src = SmallImg[0].src;
+        }
+        SmallImg[1].onclick = function () {
+            ProductImg.src = SmallImg[1].src;
+        }
+        SmallImg[2].onclick = function () {
+            ProductImg.src = SmallImg[2].src;
+        }
+        SmallImg[3].onclick = function () {
+            ProductImg.src = SmallImg[3].src;
+        }
+        SmallImg[4].onclick = function () {
+            ProductImg.src = SmallImg[4].src;
+        }
+    </script>---->
+
+</body>

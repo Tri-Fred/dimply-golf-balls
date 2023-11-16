@@ -1,139 +1,237 @@
-"<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            @font-face {
-    font-family: CaviarDreams;
-    src: url(fonts/caviar_dreams/CaviarDreams.ttf);}
-            *{
-                margin: 0;
-                padding: 0;
-                font-family: CaviarDreams;}
 
-            .container {
-                width: 100%;
-                height: 98vh;
-                background-image:url(Images/accbg.png);
-                background-position: center;
-                background-size: cover;
-                display: flex;
-                align-items: center;
-            }
-            .sub-container {
-                width: 70%;
-                height: 75vh;
-                margin-left: 15%;
-                border-radius: 15px;
-                background-color: #f8f8f8;
-                box-shadow: 3px 3px 50px #aaaaaa;
-                background-image: url(Images/acclogo.png);
-                background-position: 160% 30%;
-                background-size: 80%;
-                background-repeat: no-repeat;
-            }
-            .left-container {
-                width: 100%;
-            }
-            .left {
-                width: 40%;
-                margin-top: 13%;
-                margin-left: 70px;
-            }
-            .login {
-                font-size: 18px;
-            }
-            .a-heading {
-                margin-top: 25px;
-                color: #ffaf2c;
-            }
-            input {
-                display: block;
-                width: 90%;
-                margin-bottom: 25px;
-                padding: 7px;
-                font-size: 18px;
-                outline: none;
-            }
-            .f-password {
-                margin: 25px;
-                cursor: pointer;
-                color: #ffaf2c;
-            }
-            .f-password:hover{
-                color: #8de4f7;
-            }
-            .s-button {
-                border: none;
-                width: 95%;
-                padding: 10px;
-                background-color: #ffaf2c;
-                color: white;
-                margin-bottom: 25px;
-                font-size: 18px;
-                cursor: pointer;
-            }
-            .s-button:hover{
-                background-color: #8de4f7;
-            }
-            .t-button {
-                font-size: 18px;
-                color:#ffaf2c;
-                margin-left: 5px;
-                cursor: pointer;
-            }
-            .t-button:hover {
-                color: #8de4f7;
-            }
-            .right-container {
-                width: 100%;
-                display: none;
-            }
-            .right {
-                width: 40%;
-                margin-top: 65px;
-                 margin-left:70px;
-            }
-            .n-new {
-                font-size: 18px;
-            }
+<head>
+    <style>
+        @font-face {
+            font-family: CaviarDreams;
+            src: url(fonts/caviar_dreams/CaviarDreams.ttf);
+        }
 
-        </style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: CaviarDreams;
+        }
 
-    </head>
-    <body>
-        <div class="container">
-            <div class="sub-container">
-                <div class="left-container" id="signIn">
-                    <div class="left">
-                        <h1 class="a-heading">SIGN IN</h1>
-                        <form class="login">
-                            <input type="email" placeholder="Email">
-                            <input type="password" placeholder="Password">
-                            <p class="f-password">Forgot Password?</p>
-                            <button type="submit" class="s-button">SIGN IN</button>
-                            <p class="n-new">New Member?<i class="t-button" aria-hidden="true" onclick="showSignUp()">Sign up now</i></p>      
-                        </form>
-                </div>
-            
-            <div class="right-container" id="signUp">
-                <div class="right">
-                    <h1 class="a-heading"> SIGN UP</h1>
-                    <form class="signUp">
-                        <input type="text" placeholder="Name">
+        .container {
+            width: 100%;
+            height: 98vh;
+            background-image: url(Images/accbg.png);
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+        }
+
+        .sub-container {
+            width: 70%;
+            height: 75vh;
+            margin-left: 15%;
+            border-radius: 15px;
+            background-color: #f8f8f8;
+            box-shadow: 3px 3px 50px #aaaaaa;
+            background-image: url(Images/acclogo.png);
+            background-position: 160% 30%;
+            background-size: 80%;
+            background-repeat: no-repeat;
+        }
+
+        .left-container {
+            width: 100%;
+        }
+
+        .left {
+            width: 40%;
+            margin-top: 13%;
+            margin-left: 70px;
+        }
+
+        .login {
+            font-size: 18px;
+        }
+
+        .a-heading {
+            margin-top: 25px;
+            color: #ffaf2c;
+        }
+
+        input {
+            display: block;
+            width: 90%;
+            margin-bottom: 25px;
+            padding: 7px;
+            font-size: 18px;
+            outline: none;
+        }
+
+        .f-password {
+            margin: 25px;
+            cursor: pointer;
+            color: #ffaf2c;
+        }
+
+        .f-password:hover {
+            color: #8de4f7;
+        }
+
+        .s-button {
+            border: none;
+            width: 95%;
+            padding: 10px;
+            background-color: #ffaf2c;
+            color: white;
+            margin-bottom: 25px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .s-button:hover {
+            background-color: #8de4f7;
+        }
+
+        .t-button {
+            font-size: 18px;
+            color: #ffaf2c;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .t-button:hover {
+            color: #8de4f7;
+        }
+
+        .right-container {
+            width: 100%;
+            display: none;
+        }
+
+        .right {
+            width: 40%;
+            margin-top: 65px;
+            margin-left: 70px;
+        }
+
+        .n-new {
+            font-size: 18px;
+        }
+
+        /*Footer Navigation*/
+
+        /*Footer background*/
+        .site-footer {
+            background-color: #ffaf2c;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        /*Puts everything inside background with spacing*/
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column {
+            flex: 0 0 30%;
+            margin-right: 20px;
+            text-align: center;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .footer-column p,
+        .footer-column ul {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 7px;
+        }
+
+        .footer-column ul li {
+            position: relative;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-column ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s, transform-origin 0s;
+            transform-origin: center;
+        }
+
+        .footer-column ul li:hover a::before {
+            width: 100%;
+        }
+
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #fff;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="sub-container">
+            <div class="left-container" id="signIn">
+                <div class="left">
+                    <h1 class="a-heading">SIGN IN</h1>
+                    <form class="login">
                         <input type="email" placeholder="Email">
                         <input type="password" placeholder="Password">
-                        <button type="submit" class="s-button">SIGN UP </button>
-                        <p class="n-new"> Already have an account? <i 
-                            class="t-button" aria-hidden="true" onclick="hideSignUp()">Sign in</i></p>
+                        <p class="f-password">Forgot Password?</p>
+                        <button type="submit" class="s-button">SIGN IN</button>
+                        <p class="n-new">New Member?<i class="t-button" aria-hidden="true" onclick="showSignUp()">Sign
+                                up now</i></p>
                     </form>
                 </div>
-            </div> 
+
+                <div class="right-container" id="signUp">
+                    <div class="right">
+                        <h1 class="a-heading"> SIGN UP</h1>
+                        <form class="signUp">
+                            <input type="text" placeholder="Name">
+                            <input type="email" placeholder="Email">
+                            <input type="password" placeholder="Password">
+                            <button type="submit" class="s-button">SIGN UP </button>
+                            <p class="n-new"> Already have an account? <i class="t-button" aria-hidden="true"
+                                    onclick="hideSignUp()">Sign in</i></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div> 
-</div> 
+    </div>
     <script>
         var signUp = document.getElementById('signUp');
-        var signIn = document.getElementById('signIn'); 
+        var signIn = document.getElementById('signIn');
 
         function showSignUp() {
             signIn.style.display = "none";
@@ -145,6 +243,53 @@
             signUp.style.display = "none";
         }
     </script>
-       
-    </body>
-</html>   
+
+
+    <!--Footer Navigation Bar-->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Need help?</h3>
+                <ul class="Help">
+                    <li><a href="#" class="FAQs">FAQs</a></li>
+                    <li><a href="#" class="Delivery">Delivery</a></li>
+                    <li><a href="#" class="PaymentOptions">Payment Options</a></li>
+                    <li><a href="#" class="Returns">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Shopping online</h3>
+                <ul class="ShoppingOnline">
+                    <li><a href="#" class="placeOrder">Place an Order</a></li>
+                    <li><a href="#" class="TrackOrder">Track Your Order</a></li>
+                    <li><a href="#" class="BuyingGuides">Guides to Buying</a></li>
+                    <li><a href="#" class="GradingDesc">Grading description</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul class="ContactUs">
+                    <li><a href="Contact.html" class="ContactUs">Contact Us</a></li>
+                    <li><a href="#" class="Feedback">Leave Feedback</a></li>
+                    <li><a href="#" class="Reviews">Reviews</a></li>
+                    <li><a href="#" class="Social Pages">Social Pages</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul class="AboutUs">
+                    <li><a href="#" class="About">About Us</a></li>
+                    <li><a href="#" class="Info">Company Information</a></li>
+                    <li><a href="#" class="Work">Work For Us</a></li>
+                    <li><a href="#" class="PrivacyPolicy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Dimply Golf Balls. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

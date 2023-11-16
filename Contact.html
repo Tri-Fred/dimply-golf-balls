@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<script src="https://use.fontawesome.com/d7fc89e4f2.js"></script>
+
+<style>
+    @font-face {
+        font-family: CaviarDreams;
+        src: url(fonts/caviar_dreams/CaviarDreams.ttf);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: CaviarDreams;
+    }
+
+    .contact {
+        position: relative;
+        min-height: 100vh;
+        padding: 50px 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: black;
+    }
+
+    .contact .content {
+        max-width: 800px;
+        text-align: center;
+    }
+
+    .contact .content h2 {
+        font-size: 36px;
+        font-weight: 500;
+        color: #fff;
+    }
+
+    .contact .content p {
+        font-weight: 300;
+        color: #fff;
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 30px;
+    }
+
+    .contactForm {
+        width: 45%;
+        margin-top: 0;
+    }
+
+    .container .contactInfo {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container .contactInfo .box {
+        position: relative;
+        padding: 20px 0;
+        display: flex;
+        margin-left: 90px;
+    }
+
+    .container .contactInfo .box .icon {
+        min-width: 60px;
+        height: 60px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-size: 22px;
+    }
+
+    .container .contactInfo .box .text {
+        display: flex;
+        margin-left: 20px;
+        font-size: 16px;
+        color: #fff;
+        flex-direction: column;
+        font-weight: 300;
+    }
+
+    .container .contactInfo .box .text h3 {
+        font-weight: 500;
+        color: #ffaf2c;
+    }
+
+    .contactForm {
+        width: 40%;
+        padding: 40px;
+        background: #fff;
+    }
+
+    .contactForm h2 {
+        font-size: 30px;
+        color: #ffaf2c;
+        font-weight: 500;
+    }
+
+    .contactForm .inputBox {
+        position: relative;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .contactForm .inputBox input,
+    .contactForm .inputBox textarea {
+        width: 100%;
+        padding: 5px 0;
+        font-size: 16px;
+        margin: 10px 0;
+        border: none;
+        border-bottom: 2px solid #ffaf2c;
+        outline: none;
+        resize: none;
+    }
+
+    .contactForm .inputBox span {
+        position: absolute;
+        left: 0;
+        padding: 5px 0;
+        font-size: 16px;
+        margin: 10px 0;
+        pointer-events: none;
+        transition: 0.5s;
+        color: #000;
+    }
+
+    .contactForm .inputBox input:focus~span,
+    .contactForm .inputBox input:valid~span,
+    .contactForm .inputBox textarea:focus~span,
+    .contactForm .inputBox textarea:valid~span {
+        color: #ffaf2c;
+        font-size: 12px;
+        transform: translateY(-20px);
+    }
+
+    .contactForm .inputBox input[type="submit"] {
+        width: 100px;
+        background: #ffaf2c;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 18px;
+        text-transform: capitalize;
+    }
+
+    /*Footer Navigation*/
+
+    /*Footer background*/
+    .site-footer {
+        background-color: #ffaf2c;
+        color: #fff;
+        padding: 40px 0;
+    }
+
+    /*Puts everything inside background with spacing*/
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-column {
+        flex: 0 0 30%;
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    .footer-column h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .footer-column p,
+    .footer-column ul {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .footer-column ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 7px;
+    }
+
+    .footer-column ul li {
+        position: relative;
+    }
+
+    .footer-column ul li a {
+        text-decoration: none;
+        color: #fff;
+        text-align: center;
+        position: relative;
+    }
+
+    .footer-column ul li a::before {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #fff;
+        transition: width 0.3s, transform-origin 0s;
+        transform-origin: center;
+    }
+
+    .footer-column ul li:hover a::before {
+        width: 100%;
+    }
+
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #fff;
+    }
+</style>
+
+<html>
+
+<head>
+    <title>Contact Us</title>
+</head>
+
+<body>
+    <section class="contact">
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        </div>
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box"> <!-- Move "box" class into "contactInfo" -->
+                    <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>114 Marama Avenue South, <br> Otatara, Invercargill, <br>9879</p>
+                    </div>
+                </div>
+                <div class="box"> <!-- Move "box" class into "contactInfo" -->
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>021 082 58865</p>
+                    </div>
+                </div>
+                <div class="box"> <!-- Move "box" class into "contactInfo" -->
+                    <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>DimplyGolfBalls@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm">
+                <form>
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea required="required"></textarea>
+                        <span>Type your Message...</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Need help?</h3>
+                <ul class="Help">
+                    <li><a href="#" class="FAQs">FAQs</a></li>
+                    <li><a href="#" class="Delivery">Delivery</a></li>
+                    <li><a href="#" class="PaymentOptions">Payment Options</a></li>
+                    <li><a href="#" class="Returns">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Shopping online</h3>
+                <ul class="ShoppingOnline">
+                    <li><a href="#" class="placeOrder">Place an Order</a></li>
+                    <li><a href="#" class="TrackOrder">Track Your Order</a></li>
+                    <li><a href="#" class="BuyingGuides">Guides to Buying</a></li>
+                    <li><a href="#" class="GradingDesc">Grading description</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul class="ContactUs">
+                    <li><a href="Contact.html" class="ContactUs">Contact Us</a></li>
+                    <li><a href="#" class="Feedback">Leave Feedback</a></li>
+                    <li><a href="#" class="Reviews">Reviews</a></li>
+                    <li><a href="#" class="Social Pages">Social Pages</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul class="AboutUs">
+                    <li><a href="#" class="About">About Us</a></li>
+                    <li><a href="#" class="Info">Company Information</a></li>
+                    <li><a href="#" class="Work">Work For Us</a></li>
+                    <li><a href="#" class="PrivacyPolicy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Dimply Golf Balls. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
